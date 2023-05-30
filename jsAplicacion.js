@@ -17,7 +17,7 @@ window.onload = function() {
 
   socket.onmessage = function(event) {
     var message = event.data;
-    messagesList.innerHTML += '<div class="alert alert-primary" role="alert">Recibido: ' + message + '</div>';
+    messagesList.innerHTML += '<div class="alert alert-primary" role="alert">Mensaje Recibido: ' + message + '</div>';
   };
 
   socket.onclose = function(event) {
@@ -28,7 +28,7 @@ window.onload = function() {
     var message = messageField.value;
 
     socket.send(message);
-    messagesList.innerHTML = '<div class="alert alert-success" role="alert">Eviado: ' + message + '</div>';
+    messagesList.innerHTML = '<div class="alert alert-success" role="alert">Mensaje Enviado: ' + message + '</div>';
     messageField.value = '';
     return false;
   };
